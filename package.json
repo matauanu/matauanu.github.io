@@ -1,8 +1,8 @@
 {
   "name": "delafun-links",
   "version": "0.0.1",
-  "description": "Delafun Câmpulung și Depozit Fotovoltaice — linkuri rapide către pagina de Facebook și magazinul online.",
-  "productName": "Delafun · Depozit Fotovoltaice",
+  "description": "delaFun și Depozit Fotovoltaice — linkuri rapide către pagina de Facebook și magazinul online.",
+  "productName": "delaFun · Depozit Fotovoltaice",
   "author": "Catalin Muresian <catalinmuresian@yahoo.com>",
   "type": "module",
   "private": true,
