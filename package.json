@@ -1,8 +1,8 @@
 {
-  "name": "url-page",
+  "name": "delafun-links",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "Delafun Câmpulung și Depozit Fotovoltaice — linkuri rapide către pagina de Facebook și magazinul online.",
+  "productName": "Delafun · Depozit Fotovoltaice",
   "author": "Catalin Muresian <catalinmuresian@yahoo.com>",
   "type": "module",
   "private": true,

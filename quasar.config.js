@@ -1,9 +1,11 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
+import { copyFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { defineConfig } from '#q-app/wrappers'
 
-export default defineConfig((/* ctx */) => {
+export default defineConfig((ctx) => {
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -40,14 +42,14 @@ export default defineConfig((/* ctx */) => {
         node: 'node20'
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      // publicPath: '/',
+      publicPath: ctx.dev ? '/' : '/delafun-links/', // GitHub Pages
       // analyze: true,
       // env: {},
       // rawDefine: {}
@@ -55,6 +57,12 @@ export default defineConfig((/* ctx */) => {
       // minify: false,
       // polyfillModulePreload: true,
       // distDir
+
+      // GitHub Pages serves 404.html for unknown paths, so deep links like /demo still load the SPA
+      afterBuild ({ quasarConf }) {
+        const dir = quasarConf.build.distDir
+        copyFileSync(join(dir, 'index.html'), join(dir, '404.html'))
+      },
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
@@ -183,7 +191,7 @@ export default defineConfig((/* ctx */) => {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'url-page'
+        appId: 'delafun-links'
       }
     },
 
