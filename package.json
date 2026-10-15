@@ -1,8 +1,8 @@
 {
   "name": "delafun-links",
   "version": "0.0.1",
-  "description": "delaFun și Depozit Fotovoltaice — linkuri rapide către pagina de Facebook și magazinul online.",
-  "productName": "delaFun · Depozit Fotovoltaice",
+  "description": "delaFun, închiriere Tesla Cybertruck și Depozit Fotovoltaice — linkuri rapide către pagina de Facebook, cererea de închiriere și magazinul online.",
+  "productName": "delaFun · Cybertruck · Depozit Fotovoltaice",
   "author": "Catalin Muresian <catalinmuresian@yahoo.com>",
   "type": "module",
   "private": true,
