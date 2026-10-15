@@ -1,0 +1,15 @@
+name = "delafun-rental"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+# Site-urile care au voie să trimită formularul (separate prin virgulă)
+ALLOWED_ORIGINS = "https://matauanu.github.io,http://localhost:9000"
+# Expeditorul — trebuie să fie pe un domeniu verificat în Resend.
+# onboarding@resend.dev (adresa de test) trimite doar către emailul contului Resend.
+FROM_EMAIL = "Cybertruck Închiriere <onboarding@resend.dev>"
+
+# Secrete (setate cu `npx wrangler secret put <NUME>`, nu aici):
+#   RESEND_API_KEY — cheia API din Resend
+#   TO_EMAIL       — adresa pe care primești cererile
+#   TURNSTILE_SECRET — cheia secretă a widget-ului Cloudflare Turnstile

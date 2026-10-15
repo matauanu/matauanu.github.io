@@ -34,3 +34,7 @@ yarn-error.log*
 
 # Local QR codes (not published)
 /qr
+
+# Cloudflare Worker
+/worker/.wrangler
+/worker/.dev.vars

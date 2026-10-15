@@ -1,34 +1,60 @@
 <template>
   <q-page class="links-page flex flex-center q-pa-md">
     <div class="rows">
-      <a
-        v-for="link in links"
-        :key="link.url"
-        :href="link.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="row-card"
-      >
-        <div class="row-thumb">
-          <img :src="link.image" :alt="link.title" :style="{ objectPosition: link.position }">
-        </div>
-        <div class="row-body">
-          <div class="row-sub">{{ link.subtitle }}</div>
-          <div class="row-title">{{ link.title }}</div>
-          <div class="row-url">
-            {{ link.label }}
-            <q-icon name="arrow_outward" size="18px" />
+      <template v-for="(link, i) in links" :key="link.url">
+        <a
+          :href="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="row-card"
+        >
+          <div class="row-thumb">
+            <img :src="link.image" :alt="link.title" :style="{ objectPosition: link.position }">
           </div>
-        </div>
-      </a>
+          <div class="row-body">
+            <div class="row-sub">{{ link.subtitle }}</div>
+            <div class="row-title">{{ link.title }}</div>
+            <div class="row-url">
+              {{ link.label }}
+              <q-icon name="arrow_outward" size="18px" />
+            </div>
+          </div>
+        </a>
+
+        <!-- cardul de închiriere apare al doilea -->
+        <button v-if="i === 0" type="button" class="row-card rental-card" @click="openForm">
+          <div class="row-thumb">
+            <img :src="rental.image" :alt="rental.subtitle" :style="{ objectPosition: rental.position }">
+          </div>
+          <div class="row-body">
+            <div class="row-sub">{{ rental.subtitle }}</div>
+            <div class="row-title">{{ rental.title }}</div>
+            <div class="row-url">
+              {{ rental.label }}
+              <q-icon name="arrow_outward" size="18px" />
+            </div>
+          </div>
+        </button>
+      </template>
     </div>
+
+    <rental-dialog v-model="dialogOpen" />
+
+    <router-link to="/confidentialitate" class="policy-link">Politica de confidențialitate</router-link>
   </q-page>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { links } from 'src/data/links'
+import { rental } from 'src/data/rental'
+import RentalDialog from 'components/RentalDialog.vue'
 
+const dialogOpen = ref(false)
 
+function openForm () {
+  dialogOpen.value = true
+}
 </script>
 
 <style scoped>
@@ -73,6 +99,32 @@ import { links } from 'src/data/links'
   color: #1e1b4b;
   text-decoration: none;
   transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.rental-card {
+  border: 0;
+  padding: 0;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.links-page {
+  flex-direction: column;
+}
+
+.policy-link {
+  position: relative;
+  margin-top: 22px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.policy-link:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .row-card:hover {

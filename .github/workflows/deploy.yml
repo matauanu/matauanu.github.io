@@ -37,6 +37,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npx quasar build
+      - name: SPA fallback for deep links
+        run: cp dist/spa/index.html dist/spa/404.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
