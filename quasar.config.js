@@ -49,7 +49,7 @@ export default defineConfig((ctx) => {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      publicPath: ctx.dev ? '/' : '/delafun-links/', // GitHub Pages
+      publicPath: '/', // GitHub Pages (matauanu.github.io)
       // analyze: true,
       // env: {},
       // rawDefine: {}
