@@ -283,18 +283,50 @@ function openForm () {
   overflow-wrap: anywhere;
 }
 
+/* pe mobil păstrăm layoutul de pe desktop (poza în stânga), doar mai compact */
 @media (max-width: 560px) {
-  .row-card {
-    flex-direction: column;
-  }
-
   .row-thumb {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    width: 40%;
   }
 
   .row-body {
-    padding: 12px 16px 14px;
+    padding: 10px 12px;
+  }
+
+  .row-sub {
+    font-size: 10px;
+  }
+
+  .row-title {
+    font-size: 16px;
+    margin: 2px 0 6px;
+  }
+
+  .row-url {
+    font-size: 12px;
+  }
+
+  .row-body--brand {
+    gap: 10px;
+  }
+
+  .brand-logo img {
+    max-width: 130px;
+  }
+
+  .row-socials {
+    gap: 8px;
+  }
+
+  .social-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+  }
+
+  .social-btn svg {
+    width: 24px;
+    height: 24px;
   }
 }
 </style>
