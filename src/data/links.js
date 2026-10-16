@@ -7,7 +7,7 @@ export const links = [
     url: 'https://www.facebook.com/delafunofficial',
     label: '@delafun',
     image: base + 'thumbnails/delafun.jpg',
-    position: '50% 50%',
+    position: '50% 0%',
     socials: [
       { name: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/delafunofficial' },
       { name: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/delafunofficial/' },
